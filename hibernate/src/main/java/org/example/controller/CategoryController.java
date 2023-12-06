@@ -8,4 +8,16 @@ public class CategoryController {
     public void createCategory(String name){
         categoryService.createCategory(name);
     }
+
+    public String deleteCategory(String categoryName){
+        boolean bl=categoryService.deleteCategory(categoryName);
+        if (!bl){
+            return "category silinmedi";
+        }else {
+            return "category silindi";
+        }
+    }
+
+
+
 }

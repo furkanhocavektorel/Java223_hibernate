@@ -11,4 +11,15 @@ public class CategoryService {
         category.setName(categoryName);
         categoryRepository.saveCategory(category);
     }
+
+    public boolean deleteCategory(String categoryname){
+        Category category= categoryRepository.getByName(categoryname);
+        if (category==null){
+            System.out.println("bu kategori mevcut degil");
+            return false;
+        }else {
+            categoryRepository.deleteCategory(category);
+            return true;
+        }
+    }
 }

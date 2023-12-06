@@ -43,7 +43,7 @@ public class DBConnection {
                     new Configuration().configure().buildSessionFactory();
             session=sessionFactory.openSession();
             transaction=session.beginTransaction();
-            Category category = new Category(1,"elektornilk");
+            Category category = new Category(1,"elektornilk","dsfgvd");
             session.save(category);
             transaction.commit();
         }catch (Exception e){

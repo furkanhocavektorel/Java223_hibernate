@@ -1,40 +1,26 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+@Builder
+@Data // getter ,setter,toString
+@NoArgsConstructor // bos const
+@AllArgsConstructor // dolu const
 @Entity
-public class Category {
+public class Category{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(unique = true, // benzersiz olsun mu?
+           // name = "category_adi", // kolon adı
+            length = 50, // uzunluk
+            nullable = false, // bos gecilebilir mi? false ise bos gecilemez
+            updatable = false // false yapar iseniz güncelleme yapamazsınız
+    )
     private String name;
+    private String serial;
+    @Embedded
+    private BaseEntity baseEntity;
 
-
-
-
-
-
-    public Category() {
-    }
-
-    public Category(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
