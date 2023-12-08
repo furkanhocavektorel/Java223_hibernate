@@ -1,10 +1,10 @@
 package org.example.service;
 
 import org.example.entity.Category;
-import org.example.repository.CategoryRepository;
+import org.example.repository.CategoryRepositoryI;
 
 public class CategoryService {
-    CategoryRepository categoryRepository= new CategoryRepository();
+    CategoryRepositoryI categoryRepository= new CategoryRepositoryI();
 
     public void createCategory(String categoryName){
         Category category = new Category();
