@@ -1,6 +1,9 @@
 package org.example.controller;
 
+import org.example.entity.Category;
 import org.example.service.CategoryService;
+
+import java.util.List;
 
 public class CategoryController {
     CategoryService categoryService= new CategoryService();
@@ -17,6 +20,17 @@ public class CategoryController {
             return "category silindi";
         }
     }
+
+    public Category getById(int id){
+        Category category=categoryService.getById(id);
+        return category;
+    }
+    public void delete(int id){
+        categoryService.delete(id);
+    }
+  public void update(int id,String name, String serial){
+        categoryService.update(id,name,serial);
+  }
 
 
 

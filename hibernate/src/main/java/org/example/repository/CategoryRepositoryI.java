@@ -24,6 +24,7 @@ public class CategoryRepositoryI extends CrudRepository<Category,Integer> {
         }
     }
 
+    // eski
     public Category getById(int id){
 
         try {
@@ -42,24 +43,25 @@ public class CategoryRepositoryI extends CrudRepository<Category,Integer> {
 
     }
 
-    public List<Category> getAll(){
-        // bos liste
-
-        List<Category> categories= new ArrayList<>();
-        try {
-            dbConnection.openSession();
-            // listenin icini db verileri ile doldurdum.
-            categories=
-                    dbConnection.session.createNativeQuery("select * from category", Category.class).getResultList();
-            dbConnection.closeSession();
-            return categories;
-        }catch (Exception e){
-            dbConnection.rollback();
-            return categories;
-
-        }
-
-    }
+    // eski getall
+//    public List<Category> getAll(){
+//        // bos liste
+//
+//        List<Category> categories= new ArrayList<>();
+//        try {
+//            dbConnection.openSession();
+//            // listenin icini db verileri ile doldurdum.
+//            categories=
+//                    dbConnection.session.createNativeQuery("select * from category", Category.class).getResultList();
+//            dbConnection.closeSession();
+//            return categories;
+//        }catch (Exception e){
+//            dbConnection.rollback();
+//            return categories;
+//
+//        }
+//
+//    }
 
 
 

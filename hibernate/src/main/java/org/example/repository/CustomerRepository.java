@@ -1,13 +1,16 @@
+/*
 package org.example.repository;
 
 import org.example.entity.Customer;
 import org.example.utilty.CrudRepository;
+import org.example.utilty.ICrudRepository;
 
-public class CustomerRepository extends CrudRepository<Customer,Integer> {
+public class CustomerRepository implements ICrudRepository<Customer,Integer> {
 
 }
 
 
+*/
 /*
    1:ödev          sosyal medya
 
@@ -21,7 +24,9 @@ public class CustomerRepository extends CrudRepository<Customer,Integer> {
     post yorumları:
     yorum kime ait , yorum
 
- */
+ *//*
 
 
 
+
+*/
